@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<h1>Detalles</h1>
+<p>
+  <table class="table">
+    <th>
+      <strong>Nombre:</strong>
+    </th>
+    <td>
+      <%= @subject.name %>
+    </td>
+  </table>
+</p>
+
+<%= link_to 'Edit', edit_subject_path(@subject), class: 'btn btn-info' %>
+<%= link_to 'Back', subjects_path, class: 'btn btn-primary' %>

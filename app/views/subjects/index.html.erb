@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de temas</h1>
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Tema</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td><%= link_to 'Mostrar', subject , class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Editar', edit_subject_path(subject), class: 'btn btn-info btn-xs' %></td>
+        <td><%= link_to 'Eliminar', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'Agregar nuevo tema', new_subject_path , class: 'btn btn-primary' %>

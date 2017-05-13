@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Acordeon_SD_development@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="Acordeon_SD_development">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="Acordeon_SD_test"/>
+    <schema id="4" parent="1" name="blog_development"/>
+    <schema id="5" parent="1" name="blog_test"/>
+    <schema id="6" parent="1" name="cmms_development"/>
+    <schema id="7" parent="1" name="cmms_test"/>
+    <schema id="8" parent="1" name="information_schema"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="registro-asistentes2_development"/>
+    <schema id="12" parent="1" name="registro-asistentes2_test"/>
+    <schema id="13" parent="1" name="sys"/>
+    <schema id="14" parent="1" name="Tutorial2_development"/>
+    <schema id="15" parent="1" name="Tutorial2_test"/>
+    <schema id="16" parent="1" name="Tutorial_development"/>
+    <schema id="17" parent="1" name="Tutorial_test"/>
+    <schema id="18" parent="1" name="Tuto_development"/>
+    <schema id="19" parent="1" name="Tuto_test"/>
+    <schema id="20" parent="1" name="untitled_development"/>
+    <schema id="21" parent="1" name="untitled_test"/>
+  </database-model>
+</dataSource>

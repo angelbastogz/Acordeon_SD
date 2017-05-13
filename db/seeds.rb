@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Subject.create(name:"Arquitectura de sistemas distribuidos")
+Subject.create(name:"Modelos de comunicación entre procesos")
+Subject.create(name:"Sincronización de relojes")
