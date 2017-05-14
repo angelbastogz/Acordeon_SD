@@ -10,6 +10,7 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @concepts = Concept.all
   end
 
   # GET /subjects/new

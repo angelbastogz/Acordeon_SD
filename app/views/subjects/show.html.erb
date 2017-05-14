@@ -1,13 +1,25 @@
 <p id="notice"><%= notice %></p>
 <h1>Detalles</h1>
+<h2>Tema: <%= @subject.name%></h2>
 <p>
   <table class="table">
-    <th>
-      <strong>Nombre:</strong>
-    </th>
-    <td>
-      <%= @subject.name %>
-    </td>
+    <thead>
+    <tr>
+      <th>Concepto</th>
+      <th>Definición</th>
+      <th colspan="2"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%@concepts.each do |concept|
+      if concept.subject.id == @subject.id%>
+            <tr>
+              <td><%= concept.name %></td>
+              <td><%= concept.definition %></td>
+            </tr>
+        <% end %>
+      <% end %>
+    </tbody>
   </table>
 </p>
 

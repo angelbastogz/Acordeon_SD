@@ -18,7 +18,17 @@ class ConceptsController < ApplicationController
   end
 
   def create
+    @concept = Concept.new(concept_params)
 
+    respond_to do |format|
+      if @concept.save
+        format.html { redirect_to '/subjects', notice: 'El concepto fue correctamente agregado.' }
+        format.json { render :show, status: :created, location: @concept }
+      else
+        format.html { render :new }
+        format.json { render json: @concept.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
@@ -36,7 +46,7 @@ class ConceptsController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def subject_params
-    params.require(:concept).permit(:name, :definition)
+  def concept_params
+    params.require(:concept).permit(:name, :definition, :subject_id)
   end
 end

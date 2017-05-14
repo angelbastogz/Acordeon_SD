@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :subjects
 
   get '/concepts', to: 'concepts#index',
-      as: 'concepts'
+      as: 'concept'
   get '/subject/:id/new', to: 'concepts#new',
       as: 'subject_concept_new'
+
+  post "/concepts" => "concepts#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
