@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  root to: 'subjects#index'
+
   resources :subjects
-  resources :subjects
+
+  get '/concepts', to: 'concepts#index',
+      as: 'concepts'
+  get '/subject/:id/new', to: 'concepts#new',
+      as: 'subject_concept_new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

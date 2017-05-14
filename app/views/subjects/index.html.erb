@@ -14,9 +14,10 @@
     <% @subjects.each do |subject| %>
       <tr>
         <td><%= subject.name %></td>
-        <td><%= link_to 'Mostrar', subject , class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Detalles', subject , class: 'btn btn-primary btn-xs' %></td>
         <td><%= link_to 'Editar', edit_subject_path(subject), class: 'btn btn-info btn-xs' %></td>
         <td><%= link_to 'Eliminar', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+        <td><%= link_to 'Agregar Concepto', subject_concept_new_path(subject.id), class: 'btn btn-info btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
