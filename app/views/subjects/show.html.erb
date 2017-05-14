@@ -16,6 +16,7 @@
             <tr>
               <td><%= concept.name %></td>
               <td><%= concept.definition %></td>
+              <td><%= link_to 'Editar', concept_edit_path(@subject.id, concept), class: 'btn btn-info btn-xs' %></td>
             </tr>
         <% end %>
       <% end %>
@@ -23,5 +24,12 @@
   </table>
 </p>
 
-<%= link_to 'Edit', edit_subject_path(@subject), class: 'btn btn-info' %>
-<%= link_to 'Back', subjects_path, class: 'btn btn-primary' %>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    <%= link_to 'Editar nombre del tema', edit_subject_path(@subject), class: 'btn btn-info' %>
+    <%= link_to 'Agregar Concepto', subject_concept_new_path(@subject.id), class: 'btn btn-primary' %>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <%= link_to 'Regresar', subjects_path, class: 'btn btn-info'%>
+  </div>
+</div>

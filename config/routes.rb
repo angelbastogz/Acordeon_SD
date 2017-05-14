@@ -5,10 +5,13 @@ Rails.application.routes.draw do
 
   get '/concepts', to: 'concepts#index',
       as: 'concept'
-  get '/subject/:id/new', to: 'concepts#new',
+  get '/subject/:id/concept/new', to: 'concepts#new',
       as: 'subject_concept_new'
+  get '/subject/:id/concept/:id_concept/edit', to: 'concepts#edit',
+      as: 'concept_edit'
 
   post "/concepts" => "concepts#create"
+  patch "/concepts.:id" => "concepts#update"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

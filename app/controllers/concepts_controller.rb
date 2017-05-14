@@ -14,7 +14,7 @@ class ConceptsController < ApplicationController
   end
 
   def edit
-
+    @subject = Subject.find(params[:id])
   end
 
   def create
@@ -32,7 +32,15 @@ class ConceptsController < ApplicationController
   end
 
   def update
-
+    respond_to do |format|
+      if @concept.update(concept_params)
+        format.html { redirect_to subject_path, notice: 'El concepto fue correctamente actualizado.' }
+        format.json { render :show, status: :ok, location: @concept }
+      else
+        format.html { render :edit }
+        format.json { render json: @concept.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

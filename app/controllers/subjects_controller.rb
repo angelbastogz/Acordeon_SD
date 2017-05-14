@@ -55,10 +55,29 @@ class SubjectsController < ApplicationController
   # DELETE /subjects/1
   # DELETE /subjects/1.json
   def destroy
-    @subject.destroy
-    respond_to do |format|
-      format.html { redirect_to subjects_url, notice: 'Subject was successfully destroyed.' }
-      format.json { head :no_content }
+    if isAssociatedWithConcept(@subject.id)
+      respond_to do |format|
+        format.html { redirect_to subjects_url, notice: 'No es posible eliminar un tema que tiene conceptos relacionados'}
+        format.json { head :no_content}
+      end
+    else
+      @subject.destroy
+      respond_to do |format|
+        format.html { redirect_to subjects_url, notice: 'Subject was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    end
+  end
+
+  def isAssociatedWithConcept(subject_id)
+    concepts = Concept.all
+
+    concepts.each do |concept|
+      if concept.subject.id == subject_id
+        return true
+      end
+
+      return false
     end
   end
 
